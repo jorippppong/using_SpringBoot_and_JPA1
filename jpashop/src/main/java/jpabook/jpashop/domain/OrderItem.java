@@ -13,13 +13,13 @@ public class OrderItem {
     @Column(name = "order_iem_id")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "item_id")
-    private Item item;
+    private Item item;  //주문 상품
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")
-    private Order order;
+    private Order order;  //주문
 
     private int orderPrice;  //주문 가격
     private int count;  //주문 수량
