@@ -5,14 +5,15 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class MemberRepository {
 
-    //@PersistenceContext
-    private final EntityManager em;
+    @PersistenceContext
+    private EntityManager em;
 
     public void save(Member member) {
         em.persist(member);
